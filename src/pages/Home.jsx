@@ -14,14 +14,15 @@ const Home = () => {
 
   // Parameters for the 3d render - Adjust based on model
   const adjustBarrelForScreenSize = () =>{
-    let screenScale =null; 
-    let screenPosition = [-100, 90.5, -850];
+    let screenScale, screenPosition =null; 
     let rotation = [0.2, 4.7, 50];
 
-    if(window.innerWidth < 768){
+    if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
-    }else{
+      screenPosition = [0, -6.5, -43.4];
+    } else {
       screenScale = [1, 1, 1];
+      screenPosition = [0, -6.5, -43.4];
     }
     return[screenScale,screenPosition, rotation]
   }
