@@ -1,6 +1,7 @@
 import { useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
+import CameraOrbitController from '../components/CameraOrbitController';
 import Barrels from '../models/Barrels';
 import Sky from '../models/Sky';
 
@@ -37,9 +38,10 @@ const Home = () => {
     <section className='w-full h-screen relative'>
       <Canvas 
         className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} 
-        camera={{near: 0.1, far: 1000}} >
+        camera={{ position: [0, 3, 16], fov: 60 }}
+        style={{ height: '100vh', width: '100vw' }} >
         <Suspense fallback={<Loader />}>
-          
+          <CameraOrbitController />
           <directionalLight position={[1, 1, 1]} intensity={2}/>
           <ambientLight intensity={0.5}/>
           <hemisphereLight skyColor='#b1e1ff' groundColor='#ff964f'/>
