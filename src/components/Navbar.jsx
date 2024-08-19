@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { home, wkey, akey, skey, dkey } from "../assets/images";
 
 
 const Navbar = () => {
-  return (
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            switch (event.key) {
+                case 'w':
+                    window.location.href = '/about';
+                    break;
+                case 'a':
+                    window.location.href = '/projects';
+                    break;
+                case 's':
+                    window.location.href = '/programs';
+                    break;
+                case 'd':
+                    window.location.href = '/contact';
+                    break;
+                default:
+                    break;
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+        
+    }, []);
+
+    return (
     <aside className='navbar'>
         <NavLink to='/' className='nav-logo'>
             <img src={home} alt='home' className='w-10 h-10 object-contain' />
@@ -42,7 +71,7 @@ const Navbar = () => {
             
         </div>
     </aside>
-  )
-}
+    )
+    }
 
 export default Navbar
