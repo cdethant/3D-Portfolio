@@ -54,7 +54,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
+    @apply fixed top-0 left-0 h-full w-[200px] bg-transparent flex flex-col items-center p-5 z-10;
   }
 
   .footer {
@@ -63,6 +63,99 @@ body:has(.card[data-color="green"]:hover) {
 
   .footer-container {
     @apply flex flex-wrap gap-7 items-center justify-between;
+  }
+  
+  .navbar {
+    @apply fixed top-0 left-0 h-full w-[200px] bg-transparent flex flex-col items-center p-5 z-10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Adjust width as needed */
+    background: transparent; /* Remove the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vh;
+    padding-top: 8vh;
+  }
+  
+  .nav-logo {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  
+  .nav-logo:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01); /* Slightly scales up the logo on hover */
+  }
+  
+  /* Active state styles */
+  .nav-logo:active {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98); /* Slightly scales down the logo on active state */
+  }
+
+  .nav-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .nav-links {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .nav-links a {
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .active-link {
+    @apply text-orange-500; /* Tailwind class for active link color */
+  }
+  
+  .inactive-link {
+    @apply text-gray-800; /* Tailwind class for inactive link color */
+  }
+
+  .nav-links:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01); /* Slightly scales up the logo on hover */
+  }
+  
+  /* Active state styles */
+  .nav-links:active {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98); /* Slightly scales down the logo on active state */
+  }
+
+  .nav-text {
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px; margin-top: 0; 
+    gap: 15px;
+    font-size: 1rem;
+    font-weight: normal;
   }
 
   .info-box {

@@ -2,7 +2,7 @@ import { useState, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import CameraOrbitController from '../components/CameraOrbitController';
-import Barrels from '../models/Barrels';
+import Keyboard from '../models/Keyboard';
 import Sky from '../models/Sky';
 
 {/*<div className='absolute top-10 left-0 right-0 z-10 flex items-center justify-center'>
@@ -13,21 +13,21 @@ const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
 
   // Parameters for the 3d render - Adjust based on model
-  const adjustBarrelForScreenSize = () =>{
+  const adjustKeyboardForScreenSize = () =>{
     let screenScale, screenPosition =null; 
     let rotation = [0.2, 4.7, 50];
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [10, -6.5, -7.5];
     } else {
       screenScale = [1, 1, 1];
-      screenPosition = [0, -6.5, -43.4];
+      screenPosition = [10, -6.5, -7.5];
     }
     return[screenScale,screenPosition, rotation]
   }
 
-  const [barrelScale, barrelPos, barrelRotation] = adjustBarrelForScreenSize();
+  const [keyboardScale, keyboardPos, keyboardRotation] = adjustKeyboardForScreenSize();
 
   // The different Lightings -
   // Directional: Distant Natural Light (Sun)
@@ -47,10 +47,10 @@ const Home = () => {
           <ambientLight intensity={0.5}/>
           <hemisphereLight skyColor='#b1e1ff' groundColor='#ff964f'/>
 
-          <Barrels 
-            position={barrelPos}
-            scale={barrelScale}
-            rotation={barrelRotation}
+          <Keyboard
+            position={keyboardPos}
+            scale={keyboardScale}
+            rotation={keyboardRotation}
             isRotating={isRotating} 
             setIsRotating={setIsRotating}
           />

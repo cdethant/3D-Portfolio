@@ -1,15 +1,14 @@
 import hero from './hero.jpg'
-import meta from './meta.png'
-import shopify from './shopify.png'
-import starbucks from './starbucks.png'
-import tesla from './tesla.png'
-import logo from './logo.svg'
+import home from './home.svg'
+import wkey from './wkey.png'
+import akey from './akey.png'
+import skey from './skey.png'
+import dkey from './dkey.png'
 
 export {
-    hero,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
-    logo
+    home,
+    wkey,
+    akey,
+    skey,
+    dkey
 }

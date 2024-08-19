@@ -1,27 +1,47 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import { home, wkey, akey, skey, dkey } from "../assets/images";
+
 
 const Navbar = () => {
   return (
-    <header className='header'>
-        <NavLink to='/' className='w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md'>
-            <p className='blue-gradient_text'>ET</p>
+    <aside className='navbar'>
+        <NavLink to='/' className='nav-logo'>
+            <img src={home} alt='home' className='w-10 h-10 object-contain' />
         </NavLink>
-        <nav className='flex text-lg gap-7 font-medium'>
-            <NavLink to='/about' className={({ isActive }) => isActive ?
-            'text-orange-500' : "text-black"}>
-                About
+        
+        <div className='nav-group'>
+            <NavLink to='/about' className='nav-links'>
+                <img src={wkey} alt='wkey' className='w-full h-full object-cover' />
+                <p className='nav-text'>About</p>
             </NavLink>
-            <NavLink to='/projects' className={({ isActive }) => isActive ?
-            'text-orange-500' : "text-black"}>
-                Projects
+            
+        </div>
+
+        <div className='nav-group'>
+            <NavLink to='/projects' className='nav-links'>
+                <img src={akey} alt='akey' className='w-full h-full object-cover' />
+                <p className='nav-text'>Projects</p>
             </NavLink>
-            <NavLink to='/programs' className={({ isActive }) => isActive ?
-            'text-orange-500' : "text-black"}>
-                Programs
+            
+        </div>
+
+        <div className='nav-group'>
+            <NavLink to='/programs' className='nav-links'>
+                <img src={skey} alt='skey' className='w-full h-full object-cover' />
+                <p className='nav-text'>Programs</p>
             </NavLink>
-        </nav>
-    </header>
+            
+        </div>
+
+        <div className='nav-group'>
+            <NavLink to='/contact' className='nav-links'>
+                <img src={dkey} alt='dkey' className='w-full h-full object-cover' />
+                <p className='nav-text'>Contact</p>
+            </NavLink>
+            
+        </div>
+    </aside>
   )
 }
 
